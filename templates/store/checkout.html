@@ -14,7 +14,7 @@
 <div class="card">
   <div class="card-body">
       <h4 class="card-title mb-4">Billing Address</h4>
-      <form action="" method="POST">
+      <form action="{% url 'place_order' %}" method="POST">
         {% csrf_token %}
         <div class="form-row">
           <div class="col form-group">
@@ -110,7 +110,7 @@
       	<td>
       		<div class="price-wrap">
       			<var class="price">Rs {{ cart_item.sub_total }}</var>
-      			<small class="text-muted"> Rs {{cart_item.product.price }} each </small>
+      			<small class="text-muted">Rs {{cart_item.product.price }} each </small>
       		</div> <!-- price-wrap .// -->
       	</td>
 
@@ -120,10 +120,10 @@
 
       </tbody>
       </table>
-			
+
       <button type="submit" name="submit" class="btn btn-primary btn-block">Place Order</button>
 			<a href="{% url 'store' %}" class="btn btn-light btn-block">Continue Shopping</a>
-        </form>
+    </form>
 		</div> <!-- card-body.// -->
 		</div> <!-- card.// -->
 
